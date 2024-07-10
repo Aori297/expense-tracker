@@ -23,43 +23,38 @@
               <th>Name</th>
               <th>Category</th>
               <th>Amount</th>
+              <th></th>
             </tr>
           </thead>
 
           <tbody id="expenses-table">
-            <tr>
-              <!-- For Input -->
+            <tr id="input-row">
+              
+              <form>
+              <td></td>
+              <td><input id="name" type="text"/></td>
+              <td>
+                <select id="cat">
+                  <option value="shopping">Shopping</option>
+                  <option value="entertainments">Entertainments</option>
+                  <option value="bills">Bills & Utilities</option>
+                  <option value="education">Education</option>
+                  <option value="transport">Transportation</option>
+                  <option value="food">Food</option>
+                  <option value="health">Health & Wellness</option>
+                </select>
+              </td>
+              <td><input id="money" type="number"/></td>
+              <td><button type="submit">Add</button></td>
+              
+              </form>
             </tr>
-            <tr>
-              <!-- For Input -->
-            </tr>
-          </tbody>
 
+          </tbody>
+          
         </table>
       </div>
-      
-      <br>
-
-      <div class="inputfield" style="display: flex;"> 
-        <form>
-         
-          <input id="name" type="text"/> 
-          <input id="money" type="number"/>
-          <label id="category">Category</label>
-
-          <select id="cat">
-            <option value="shopping">Shopping</option>
-            <option value="entertainments">Entertainments</option>
-            <option value="bills">Bills & Utilities</option>
-            <option value="education">Education</option>
-            <option value="transport">Transportation</option>
-            <option value="food">Food</option>
-            <option value="health">Health & Wellness</option>
-          </select>
-
-          <button type="submit">Add</button>
-
-        </form>
+    
       </div>
     </div>
     
