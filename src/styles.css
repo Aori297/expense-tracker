@@ -1,19 +1,29 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   margin: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: auto;
-  background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(26,48,207,1) 100%);
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(26, 48, 207, 1) 100%
+  );
 }
 
-.container{
+.container {
   width: 150vh;
   height: 90vh;
   margin: auto;
@@ -27,36 +37,39 @@ table {
   width: 100%;
 }
 
-td, th {
-
+td,
+th {
   padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-tr:hover {background-color: #ddd;}
+tr:hover {
+  background-color: #ddd;
+}
 
 th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
 
-input{
+input {
   padding: 1.5vh;
   width: 200px;
   border-radius: 5px;
   border: none;
-  outline: none;  
+  outline: none;
 }
 
-button{
+button {
   padding: 1.5vh;
   width: 10vh;
   border-radius: 5px;
   border: solid black 1px;
   outline: none;
 }
-

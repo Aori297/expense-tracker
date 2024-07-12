@@ -1,23 +1,29 @@
 // Select things from html
 const form = document.querySelector("form");
-const input1 = document.getElementById("name");
-const input2 = document.getElementById("money");
+const expenseName = document.getElementById("name");
+const expenseAmount = document.getElementById("money");
 const category = document.getElementById("cat");
 const nlist = document.querySelector(".nlist");
 const mlist = document.querySelector(".mlist");
 const clist = document.querySelector(".clist");
 const tableBody = document.getElementById("expenses-table");
 
+const categories = document.querySelectorAll("select#cat>option");
+
+let totalValue = 0;
+const expenseMap = {};
+categories.forEach((cat) => (expenseMap[cat.innerText] = 0));
+
 // Event listener for form submission
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Alerts user if the input fields are empty.
-  if (input1.value.trim() === "") {
+  if (expenseName.value.trim() === "") {
     alert("Please provide a name.");
     return;
   }
-  if (input2.value.trim() === "") {
+  if (expenseAmount.value.trim() === "") {
     alert("Please provide the amount.");
     return;
   }
@@ -33,9 +39,11 @@ form.addEventListener("submit", function (e) {
   const amountCell = document.createElement("td");
 
   dateCell.textContent = currentDate;
-  nameCell.textContent = input1.value;
+  nameCell.textContent = expenseName.value;
   categoryCell.textContent = category.options[category.selectedIndex].text;
-  amountCell.textContent = input2.value;
+  amountCell.textContent = expenseAmount.value;
+  expenseMap[categoryCell.textContent] += parseFloat(amountCell.textContent);
+  updateTotalAmount(expenseAmount.value);
 
   // Creates new div class and stores the
   newRow.appendChild(dateCell);
@@ -47,6 +55,13 @@ form.addEventListener("submit", function (e) {
   tableBody.appendChild(newRow);
 
   // Clears the input field after submitting
-  input1.value = "";
-  input2.value = "";
+  expenseName.value = "";
+  expenseAmount.value = "";
+
+  console.log(totalValue);
+  console.table(expenseMap);
 });
+
+function updateTotalAmount(amount) {
+  totalValue += parseFloat(amount);
+}
