@@ -3,10 +3,8 @@ const form = document.querySelector("form");
 const expenseName = document.getElementById("name");
 const expenseAmount = document.getElementById("money");
 const category = document.getElementById("cat");
-const nlist = document.querySelector(".nlist");
-const mlist = document.querySelector(".mlist");
-const clist = document.querySelector(".clist");
 const tableBody = document.getElementById("expenses-table");
+const totalAmountDisplay = document.getElementById("total-amount");
 
 const categories = document.querySelectorAll("select#cat>option");
 
@@ -51,8 +49,9 @@ form.addEventListener("submit", function (e) {
   newRow.appendChild(categoryCell);
   newRow.appendChild(amountCell);
 
-  // Appending the new row to the table
-  tableBody.appendChild(newRow);
+  // Adding the new row to the table below the input fields
+  const inputRow = document.getElementById("input-row");
+  tableBody.insertBefore(newRow, inputRow.nextSibling);
 
   // Clears the input field after submitting
   expenseName.value = "";
@@ -64,4 +63,5 @@ form.addEventListener("submit", function (e) {
 
 function updateTotalAmount(amount) {
   totalValue += parseFloat(amount);
+  totalAmountDisplay.textContent = `Total: $${totalValue.toFixed(1)}`;
 }
