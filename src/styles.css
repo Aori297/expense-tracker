@@ -32,6 +32,10 @@ body {
   border-radius: 20px;
 }
 
+h1{ 
+  padding: 2vh;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -51,8 +55,8 @@ tr:hover {
 }
 
 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   text-align: left;
   background-color: #04aa6d;
   color: white;
@@ -72,4 +76,15 @@ button {
   border-radius: 5px;
   border: solid black 1px;
   outline: none;
+}
+
+.card-con{
+  display: flex;
+  gap: 1.5vh;
+}
+
+.card-con #cards{
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 2vh;
 }
